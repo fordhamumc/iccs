@@ -1,0 +1,153 @@
+.nav-jump {
+  transition: transform 0.15s ease-out;
+  transform: translateY(-100%);
+  position: absolute;
+}
+.nav-jump:focus-within,
+.nav-jump--active {
+  transform: translateX(0);
+}
+
+.nav-primary {
+  box-sizing: border-box;
+  transform-origin: 0 0;
+
+  @media (max-width: 55rem) {
+    background: #fff;
+    clip-path: inset(0 0 100% 0);
+    height: calc(100vh - #{$spacer} - 1.875em);
+    width: 100%;
+    padding: $spacer;
+    position: fixed;
+    top: calc(#{$spacer} + 1.875em);
+    left: 0;
+    opacity: 0;
+    transform: scale(1, 0);
+    transition: clip-path 0.5s $timing, transform 0.5s $timing,
+      opacity 0.55s ease;
+  }
+}
+
+.nav-control--open .nav-primary {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-primary__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (max-width: 55rem) {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.nav-primary__item {
+  margin: 0 ($spacer * 0.5);
+  position: relative;
+  transform-origin: 0 100%;
+
+  @media (max-width: 55rem) {
+    color: $text-color;
+    font-size: 1.3em;
+    margin: ($spacer * 0.75) 0;
+    opacity: 0;
+    transform: scale(1, 0) translateY(100%);
+  }
+}
+.nav-control--open .nav-primary__item {
+  @media (max-width: 55rem) {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      $brand-primary,
+      $brand-primary 50%,
+      $text-color 50%
+    );
+    background-size: 200% 100%;
+    background-position: 100%;
+    opacity: 1;
+    transform: scale(1) translateY(0%);
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        transition: background-position 0.4s $timing,
+          transform 0.4s #{$i * 0.1 + 0.2}s ease-out,
+          opacity 0.25s #{$i * 0.1 + 0.2}s ease;
+      }
+    }
+  }
+}
+.nav-primary__item:after {
+  content: '';
+  background: $brand-primary;
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transform: scale(0, 1);
+  transform-origin: 0 0;
+  transition: transform 0.4s $timing;
+}
+.banner--front-page .nav-primary__item:after {
+  @media (min-width: 55.01rem) {
+    background: white;
+  }
+}
+.nav-primary__item:hover {
+  background-position: 0;
+}
+.nav-primary__item:hover:after {
+  transform: scale(1);
+}
+
+.nav-control {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  width: 2rem;
+  padding: 0;
+  margin: 0 0 0 $spacer;
+  position: relative;
+  z-index: $zBanner;
+
+  @media (min-width: 55.01rem) {
+    display: none;
+  }
+}
+
+.nav-control__icon {
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.nav-control__icon line {
+  transform-origin: 0 0;
+  transition: transform 0.5s $timing, opacity 0.55s ease;
+}
+.nav-control__icon line:last-child {
+  transform-origin: 0 100%;
+}
+
+.nav-control--open .nav-control__icon line {
+  opacity: 0;
+  transform: scale(0.2, 1);
+}
+.nav-control--open .nav-control__icon line:first-child {
+  opacity: 1;
+  transform: rotate(45deg) scale(1) translate(6px, -6px);
+}
+.nav-control--open .nav-control__icon line:last-child {
+  opacity: 1;
+  transform: rotate(-45deg) scale(1) translate(6px, 4px);
+}

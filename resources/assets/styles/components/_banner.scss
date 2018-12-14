@@ -1,0 +1,55 @@
+.banner {
+  font-family: $font-headlines;
+  font-weight: $weight-headlines;
+  position: absolute;
+  width: 100%;
+  z-index: $zBanner;
+}
+
+.banner__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 auto;
+  padding: $spacer;
+  max-width: $container;
+  box-sizing: border-box;
+  width: 100%;
+
+  @media (max-width: 55rem) {
+    padding: ($spacer * 0.5) $spacer;
+  }
+}
+
+.banner--front-page .banner__container.nav-control--open {
+  @media (max-width: 55rem) {
+    background: $hero-background;
+    background-size: 100vw 100vh;
+    position: fixed;
+  }
+}
+
+.banner,
+.banner a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.banner--front-page,
+.banner--front-page a {
+  color: #fff;
+}
+
+.banner__brand {
+  font-size: 1.5em;
+  line-height: 1.25;
+  flex-grow: 1;
+}
+
+.banner__button {
+  @include buttons;
+
+  @media (min-width: 55.01rem) {
+    margin: -0.3rem 0 -0.3rem ($spacer * 1.5);
+  }
+}

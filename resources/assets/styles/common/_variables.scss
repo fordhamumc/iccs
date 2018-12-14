@@ -1,0 +1,48 @@
+/** Colors */
+$brand-primary: #900028;
+$button-background: #900028;
+$button-color: #fff;
+$text-color: #333;
+$hero-background: #1f4b69
+  radial-gradient(
+    132.54% 129.93% at 50% 80%,
+    #2b6791 11.61%,
+    #1f4b69 24.62%,
+    #143043 37.62%,
+    #0b1b26 50.42%,
+    #050c11 62.93%,
+    #010304 74.82%
+  );
+
+/** Type  */
+$font-primary: 'garamond-premier-pro', serif;
+$weight-primary: 400;
+$lineHeight-primary: 1.4;
+$weight-strong: 600;
+$font-headlines: 'oswald', sans-serif;
+$weight-headlines: 400;
+
+/** Box Model  */
+$container: 90rem;
+$spacer: 2rem;
+
+/** Mixins */
+@mixin buttons {
+  display: inline-block;
+  background: $button-background;
+  border-radius: 1em;
+  color: $button-color;
+  text-decoration: none;
+  padding: 0.3rem 2rem;
+}
+
+/** Timing */
+$timing: cubic-bezier(0.77, 0.2, 0.05, 1);
+
+/** Z-Indexes */
+$zHidden: -1;
+$zNormal: 0;
+$zBanner: 1004;
+$z1: 1001;
+$z2: 1002;
+$z3: 1003;
