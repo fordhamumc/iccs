@@ -1,7 +1,9 @@
 /** Colors */
 $brand-primary: #900028;
+$border-color: #ccc;
 $button-background: #900028;
 $button-color: #fff;
+$footer-background: #fafafc;
 $text-color: #333;
 $hero-background: #1f4b69
   radial-gradient(
@@ -26,16 +28,6 @@ $weight-headlines: 400;
 $container: 90rem;
 $spacer: 2rem;
 
-/** Mixins */
-@mixin buttons {
-  display: inline-block;
-  background: $button-background;
-  border-radius: 1em;
-  color: $button-color;
-  text-decoration: none;
-  padding: 0.3rem 2rem;
-}
-
 /** Timing */
 $timing: cubic-bezier(0.77, 0.2, 0.05, 1);
 
@@ -46,3 +38,66 @@ $zBanner: 1004;
 $z1: 1001;
 $z2: 1002;
 $z3: 1003;
+
+/** Mixins */
+@mixin buttons {
+  display: inline-block;
+  background: $button-background;
+  border-radius: 1em;
+  color: $button-color;
+  text-decoration: none;
+  padding: 0.3rem 2rem;
+}
+
+@mixin fancyHover(
+  $color: $text-color,
+  $hover: $primary,
+  $easing: $timing
+) {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    $hover,
+    $hover 50%,
+    $color 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100%;
+  position: relative;
+  transition: background-position 0.4s $easing;
+
+  &:after {
+    content: '';
+    background: $hover;
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    transform: scale(0, 1);
+    transform-origin: 0 0;
+    transition: transform 0.4s $easing;
+  }
+
+  &:hover,
+  &:focus {
+    background-position: 0;
+  }
+
+  &:hover:after,
+  &:focus:after {
+    transform: scale(1);
+  }
+
+  &:focus {
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background: transparent;
+    color: $hover;
+  }
+  &:focus:after {
+    transition: none;
+  }
+}

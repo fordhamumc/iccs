@@ -1,16 +1,6 @@
 <header class="hero">
     <svg class="hero__background" preserveAspectRatio="xMidYMax slice" role="presentation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 435.4657 222.8613">
-        <title>ICCS Background</title>
         <defs>
-            <radialGradient id="a" cx="-30.2873" cy="175.3423" r="397.7864" gradientTransform="translate(275.8795 -34.3333) scale(1.3254 1.2993)" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#2b6791"/>
-                <stop offset="0.1161" stop-color="#1f4b69"/>
-                <stop offset="0.2462" stop-color="#143043"/>
-                <stop offset="0.3762" stop-color="#0b1b26"/>
-                <stop offset="0.5042" stop-color="#050c11"/>
-                <stop offset="0.6293" stop-color="#010304"/>
-                <stop offset="0.7482"/>
-            </radialGradient>
             <radialGradient id="b" cx="38500.0434" cy="-41383.1584" r="14.3709" gradientTransform="matrix(0.4516, 0.483, -0.4954, 0.4402, -37602.3852, -249.0766)" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stop-color="#fff"/>
                 <stop offset="0.1065" stop-color="#cdcdcd"/>

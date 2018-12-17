@@ -6,7 +6,7 @@
   <div class="banner__container">
     <a class="banner__brand" href="{{ home_url('/') }}">{{ get_theme_mod('short_title', get_bloginfo('name', 'display')) }}</a>
     @if (has_nav_menu('primary_navigation'))
-      <nav class="nav-primary" role="navigation" aria-label="{{ __('Main Menu', 'fu-iccs') }}">
+      <nav class="nav-primary" role="navigation" aria-label="{{ \App\get_nav_name('primary_navigation') }}">
         {!! wp_nav_menu([
           'container'       => FALSE,
           'container_class' => 'nav-primary',
@@ -24,7 +24,7 @@
       </a>
     @endif
     @if (has_nav_menu('primary_navigation'))
-      <button class="nav-control" aria-label="{{ __('Main Menu', 'fu-iccs') }}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-primary-menu">
+      <button class="nav-control" aria-label="{{ \App\get_nav_name('primary_navigation') }}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-primary-menu">
         <svg class="nav-control__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
           <line x1="0" x2="32" y1="6" y2="6" />
           <line x1="0" x2="32" y1="16" y2="16" />

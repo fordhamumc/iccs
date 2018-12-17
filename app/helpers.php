@@ -141,6 +141,12 @@ function display_sidebar()
     return $display;
 }
 
+/**
+ * Return a date in the Fordham date format
+ * @param string $start Start date
+ * @param string $end End Date (optional)
+ * @return string
+ */
 function fu_date_format($start, $end = '') {
     $start = strtotime($start);
     $end = strtotime($end);
@@ -154,4 +160,16 @@ function fu_date_format($start, $end = '') {
         return date('F j ', $start) . __('to', 'fu-iccs') . date(' F j, Y', $end);
     }
     return date('F j, Y ', $start) . __('to', 'fu-iccs') . date(' F j, Y', $end);
+}
+
+/**
+ * Get the menu name by it's template location
+ * @param string $location Template location slug
+ * @return string
+ */
+function get_nav_name($location) {
+	$locations = get_nav_menu_locations();
+	if (!array_key_exists($location, $locations)) return '';
+	$menu = get_term($locations[$location], 'nav_menu');
+	return (is_wp_error($menu)) ? '' : $menu->name;
 }

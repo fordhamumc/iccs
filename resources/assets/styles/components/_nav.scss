@@ -63,16 +63,7 @@
 }
 .nav-control--open .nav-primary__item {
   @media (max-width: 55rem) {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(
-      to right,
-      $brand-primary,
-      $brand-primary 50%,
-      $text-color 50%
-    );
-    background-size: 200% 100%;
-    background-position: 100%;
+    @include fancyHover($text-color, $brand-primary, $timing);
     opacity: 1;
     transform: scale(1) translateY(0%);
 
@@ -85,29 +76,15 @@
     }
   }
 }
-.nav-primary__item:after {
-  content: '';
-  background: $brand-primary;
-  display: block;
-  height: 2px;
-  width: 100%;
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  transform: scale(0, 1);
-  transform-origin: 0 0;
-  transition: transform 0.4s $timing;
+.nav-control--open .nav-primary__item:after {
+  @media (max-width: 55rem) {
+    bottom: -4px;
+  }
 }
 .banner--front-page .nav-primary__item:after {
   @media (min-width: 55.01rem) {
     background: white;
   }
-}
-.nav-primary__item:hover {
-  background-position: 0;
-}
-.nav-primary__item:hover:after {
-  transform: scale(1);
 }
 
 .nav-control {

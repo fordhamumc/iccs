@@ -79,7 +79,7 @@
   position: relative;
 
   @media (min-width: 50rem) {
-    font-size: 1.1em;
+    font-size: 1.2em;
     grid-column: 2;
     grid-row: 2;
     padding: ($spacer * 0.25) 0;
@@ -100,6 +100,5 @@
 }
 
 .hero__date {
-  font-size: 1.2em;
   margin-bottom: ($spacer * 0.25);
 }

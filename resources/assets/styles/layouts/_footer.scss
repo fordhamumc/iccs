@@ -1,0 +1,72 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: $spacer $spacer 0;
+  background: $footer-background;
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $container;
+  margin: 0 ($spacer * -1);
+}
+
+.footer a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.footer__item {
+  margin: 0 $spacer $spacer;
+}
+
+.footer--sidebar {
+  align-self: center;
+  flex-grow: 1;
+  width: 100%;
+
+  @media (min-width: 40rem) {
+    width: auto;
+  }
+}
+
+.footer--lower {
+  border-top: 1px solid $border-color;
+  width: 100%;
+  padding-top: ($spacer * 0.5);
+}
+
+.footer__header {
+  font-size: 1.1em;
+  margin: 0 0 ($spacer * 0.5);
+}
+
+.footer__logo {
+  fill: $text-color;
+  max-width: 13rem;
+}
+
+.footer-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer--lower .footer-nav__list {
+  display: flex;
+  font-size: 0.8em;
+
+  @media (min-width: 40rem) {
+    justify-content: flex-end;
+  }
+}
+
+.footer-nav__item a {
+  @include fancyHover($text-color, $brand-primary, $timing);
+}
+
+.footer--lower .footer-nav__item + .footer-nav__item:before {
+  content: '|';
+  padding: 0 ($spacer * 0.5);
+}

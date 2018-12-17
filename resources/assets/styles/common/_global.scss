@@ -48,3 +48,10 @@ h5 {
 h6 {
   font-size: 0.67em;
 }
+
+.content {
+  font-size: 1.2em;
+  max-width: 75ch;
+  margin: 0 auto;
+  padding: $spacer;
+}
