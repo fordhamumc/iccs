@@ -29,9 +29,10 @@
   }
 }
 
-.banner,
-.banner a {
+.banner {
   color: $text-color;
+}
+.banner a {
   text-decoration: none;
 }
 
@@ -41,6 +42,7 @@
 }
 
 .banner__brand {
+  color: $text-color;
   font-size: 1.5em;
   line-height: 1.25;
   flex-grow: 1;
@@ -48,8 +50,19 @@
 
 .banner__button {
   @include buttons;
+  @include button-arrow;
+  animation: fade_in 0.3s;
 
   @media (min-width: 55.01rem) {
     margin: -0.3rem 0 -0.3rem ($spacer * 1.5);
+  }
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

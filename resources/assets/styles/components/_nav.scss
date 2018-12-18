@@ -1,11 +1,23 @@
 .nav-jump {
-  transition: transform 0.15s ease-out;
+  box-sizing: border-box;
   transform: translateY(-100%);
   position: absolute;
 }
 .nav-jump:focus-within,
 .nav-jump--active {
+  transition: transform 0.15s ease-out;
   transform: translateX(0);
+}
+.nav-jump__item {
+  border: 2px solid $brand-primary;
+  display: inline-block;
+  background: $brand-primary;
+  color: #fff;
+  margin: 0 0.3rem;
+  padding: 0.2rem 0.3rem;
+}
+.nav-jump__item:focus {
+  border-color: #fff;
 }
 
 .nav-primary {
@@ -63,25 +75,34 @@
 }
 .nav-control--open .nav-primary__item {
   @media (max-width: 55rem) {
-    @include fancyHover($text-color, $brand-primary, $timing);
     opacity: 1;
     transform: scale(1) translateY(0%);
 
     @for $i from 1 through 10 {
       &:nth-child(#{$i}) {
-        transition: background-position 0.4s $timing,
-          transform 0.4s #{$i * 0.1 + 0.2}s ease-out,
+        transition: transform 0.4s #{$i * 0.1 + 0.2}s ease-out,
           opacity 0.25s #{$i * 0.1 + 0.2}s ease;
       }
     }
   }
 }
-.nav-control--open .nav-primary__item:after {
-  @media (max-width: 55rem) {
-    bottom: -4px;
+.nav-primary__item a {
+  @include fancyHover($text-color, $brand-primary, $timing);
+}
+.nav-primary__item a:after {
+  bottom: -4px;
+}
+.banner--front-page .nav-primary__item a {
+  @media (min-width: 55.01rem) {
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
   }
 }
-.banner--front-page .nav-primary__item:after {
+.banner--front-page .nav-primary__item a:focus {
+  color: #fff;
+}
+.banner--front-page .nav-primary__item a:after {
   @media (min-width: 55.01rem) {
     background: white;
   }

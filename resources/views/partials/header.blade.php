@@ -21,6 +21,7 @@
     @if ($info['registration-url'])
       <a href="{{ $info['registration-url'] }}" class="banner__button">
         {{ $info['registration-text'] }}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.5452 44.2393" role="presentation"><line class="line" x1="4" y1="21.3541" x2="51.5" y2="21.8541"/><line class="head-top" x1="30.1951" y1="4" x2="51.5" y2="21.8769"/><line class="head-bottom" x1="30.2404" y1="40.2393" x2="51.5452" y2="22.3625"/></svg>
       </a>
     @endif
     @if (has_nav_menu('primary_navigation'))

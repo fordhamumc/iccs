@@ -6,7 +6,7 @@ const desire = require('./util/desire')
 
 const userConfig = merge(
   desire(`${__dirname}/../config`),
-  desire(`${__dirname}/../config-local`),
+  desire(`${__dirname}/../config-local`)
 )
 
 const isProduction = !!((argv.env && argv.env.production) || argv.p)
@@ -19,33 +19,33 @@ const config = merge(
   {
     open: true,
     copy: 'images/**/*',
-    proxyUrl: 'https://iccs.local',
+    proxyUrl: 'http://localhost:3000',
     cacheBusting: '[name]_[hash]',
     paths: {
       root: rootPath,
       assets: path.join(rootPath, 'resources/assets'),
-      dist: path.join(rootPath, 'dist'),
+      dist: path.join(rootPath, 'dist')
     },
     enabled: {
       sourceMaps: !isProduction,
       optimize: isProduction,
       cacheBusting: isProduction,
-      watcher: !!argv.watch,
+      watcher: !!argv.watch
     },
-    watch: [],
+    watch: []
   },
-  userConfig,
+  userConfig
 )
 
 module.exports = merge(config, {
   env: Object.assign(
     {production: isProduction, development: !isProduction},
-    argv.env,
+    argv.env
   ),
   publicPath: `${config.publicPath}/${path.basename(
-    config.paths.dist,
+    config.paths.dist
   )}/`,
-  manifest: {},
+  manifest: {}
 })
 
 if (process.env.NODE_ENV === undefined) {

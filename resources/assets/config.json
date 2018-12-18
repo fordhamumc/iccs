@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/fordham-iccs",
-  "devUrl": "https://iccs.local",
+  "devUrl": "https://iccs.local/",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
