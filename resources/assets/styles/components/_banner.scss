@@ -1,6 +1,8 @@
 .banner {
   font-family: $font-headlines;
   font-weight: $weight-headlines;
+  font-size: 0.9em;
+  letter-spacing: -0.1em;
   position: absolute;
   width: 100%;
   z-index: $zBanner;
@@ -8,8 +10,9 @@
 
 .banner__container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
   margin: 0 auto;
   padding: $spacer;
   max-width: $container;
@@ -43,26 +46,21 @@
 
 .banner__brand {
   color: $text-color;
-  font-size: 1.5em;
+  font-size: 1.7em;
   line-height: 1.25;
   flex-grow: 1;
+  margin-bottom: -0.1em;
 }
 
 .banner__button {
   @include buttons;
   @include button-arrow;
-  animation: fade_in 0.3s;
 
-  @media (min-width: 55.01rem) {
-    margin: -0.3rem 0 -0.3rem ($spacer * 1.5);
+  @media (min-width: 55.01rem) and (max-width: 70rem) {
+    order: 2;
   }
-}
 
-@keyframes fade_in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+  @media (min-width: 70.01rem) {
+    margin: -0.3rem 0 -0.3rem $spacer;
   }
 }

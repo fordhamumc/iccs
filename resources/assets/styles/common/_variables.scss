@@ -21,7 +21,7 @@ $font-primary: 'garamond-premier-pro', serif;
 $weight-primary: 400;
 $lineHeight-primary: 1.4;
 $weight-strong: 600;
-$font-headlines: 'oswald', sans-serif;
+$font-headlines: 'ocr-a-std', sans-serif;
 $weight-headlines: 400;
 
 /** Box Model  */
@@ -57,6 +57,10 @@ $z3: 1003;
 @mixin button-arrow {
   position: relative;
   transition: padding 0.3s 0.1s ease-out;
+
+  .preload & {
+    transition: none;
+  }
 
   svg {
     fill: none;

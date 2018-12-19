@@ -1,5 +1,6 @@
 export default {
   init() {
+    this.remove_preload()
     this.nav_jump_focus()
     this.menu_toggle('.nav-control')
   },
@@ -7,8 +8,12 @@ export default {
     // JavaScript to be fired on all pages, after page specific JS is fired
   },
 
-  // Toggle Menu
+  // Remove preload class
+  remove_preload() {
+    document.body.classList.remove('preload')
+  },
 
+  // Toggle Menu
   menu_toggle(selector) {
     let toggleButton = document.querySelector(selector)
     if (!toggleButton) return

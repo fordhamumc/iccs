@@ -42,7 +42,7 @@
   z-index: $z1;
 
   @media (min-width: 50rem) {
-    grid-template-columns: minmax(min-content, 30rem) max-content;
+    grid-template-columns: minmax(min-content, 35rem) max-content;
     grid-gap: 0 ($spacer * 4);
   }
 }
@@ -53,22 +53,26 @@
 }
 
 .hero__title {
-  font-size: 2em;
+  font-size: 1.7em;
   line-height: 1.2;
   margin: 0;
 
   @media (min-width: 50rem) {
-    font-size: 3.5em;
+    font-size: 2.3em;
     grid-column: 1;
+  }
+
+  @media (min-width: 60rem) {
+    font-size: 3em;
   }
 }
 
 .hero__tagline {
-  font-size: 1.2em;
+  font-size: 1em;
 
   @media (min-width: 50rem) {
     grid-column: 1;
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 
@@ -76,10 +80,11 @@
   font-family: $font-headlines;
   font-size: 1em;
   font-weight: $weight-headlines;
+  letter-spacing: -0.1em;
   position: relative;
 
   @media (min-width: 50rem) {
-    font-size: 1.2em;
+    font-size: 1.1em;
     grid-column: 2;
     grid-row: 2;
     padding: ($spacer * 0.25) 0;

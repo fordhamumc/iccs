@@ -38,8 +38,8 @@
 }
 
 .footer__header {
-  font-size: 1.1em;
-  margin: 0 0 ($spacer * 0.5);
+  font-size: 0.9em;
+  margin: 0;
 }
 
 .footer__logo {
@@ -49,7 +49,7 @@
 
 .footer-nav__list {
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 ($spacer * 0.25);
   padding: 0;
 }
 

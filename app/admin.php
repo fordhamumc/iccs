@@ -5,6 +5,11 @@ namespace App;
 use DateTime;
 
 /**
+ * Remove admin bar
+ */
+show_admin_bar(false);
+
+/**
  * Theme customizer
  */
 add_action('customize_register', function (\WP_Customize_Manager $wp_customize) {

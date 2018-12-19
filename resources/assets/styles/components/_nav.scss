@@ -24,6 +24,12 @@
   box-sizing: border-box;
   transform-origin: 0 0;
 
+  @media (min-width: 55.01rem) and (max-width: 70rem) {
+    margin-top: ($spacer * 0.5);
+    order: 3;
+    width: 100%;
+  }
+
   @media (max-width: 55rem) {
     background: #fff;
     clip-path: inset(0 0 100% 0);
@@ -48,14 +54,15 @@
 
 .nav-primary__list {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 0 ($spacer * -0.5);
   list-style: none;
 
   @media (max-width: 55rem) {
     flex-direction: column;
+    justify-content: center;
     height: 100%;
   }
 }
